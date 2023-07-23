@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 chess-game/Library/
 chess-game/Logs/
+chess-game/Temp/
