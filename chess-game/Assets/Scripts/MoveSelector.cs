@@ -15,6 +15,9 @@ public class MoveSelector : MonoBehaviour
     private List<Vector2Int> moveLocations;
     private List<GameObject> locationHighlights;
 
+    private LTDescr pieceTween;
+    private Vector3 initialLocalPosition;
+
     TileSelector selector;
 
     void Awake()
@@ -36,6 +39,7 @@ public class MoveSelector : MonoBehaviour
         
         if(Input.GetMouseButtonDown(1))
         {
+            ResetPieceAnmation();
             CancelMove();
         }
 
@@ -52,7 +56,7 @@ public class MoveSelector : MonoBehaviour
                 {
                     return;
                 }
-
+                ResetPieceAnmation();
                 if (GameManager.instance.PieceAtGrid(gridPoint) == null)
                 {
                     GameManager.instance.Move(movingPiece, gridPoint);
@@ -72,6 +76,11 @@ public class MoveSelector : MonoBehaviour
         }
     }
 
+    private void ResetPieceAnmation()
+    {
+        movingPiece.transform.localPosition = initialLocalPosition;
+    }
+
     private void CancelMove()
     {
         this.enabled = false;
@@ -81,6 +90,7 @@ public class MoveSelector : MonoBehaviour
             Destroy(highlight);
         }
         GameManager.instance.DeselectPiece(movingPiece);
+        LeanTween.pause(movingPiece);
         movingPiece = null;
         selector.EnterState();
     }
@@ -88,6 +98,7 @@ public class MoveSelector : MonoBehaviour
     public void EnterState(GameObject piece)
     {
         movingPiece = piece;
+        initialLocalPosition = movingPiece.transform.localPosition;
         this.enabled = true;
 
         moveLocations = GameManager.instance.MovesForPiece(movingPiece);
@@ -111,6 +122,8 @@ public class MoveSelector : MonoBehaviour
             }
             locationHighlights.Add(highlight);
         }
+
+        pieceTween = LeanTween.moveY(movingPiece, movingPiece.transform.localPosition.y + 0.25f, 0.25f).setLoopPingPong();
     }
 
     private void ExitState()

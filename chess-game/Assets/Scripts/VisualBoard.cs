@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class VisualBoard : MonoBehaviour
 {
+    private Vector3 initialLocalPosition;
+
     public GameObject AddPiece(GameObject piece, int row, int col)
     {
         Vector2Int gridPoint = Geometry.GridPoint(row, col);
@@ -24,13 +26,12 @@ public class VisualBoard : MonoBehaviour
 
     public void SelectPiece(GameObject piece)
     {
-        // MeshRenderer renderers = piece.GetComponentInChildren<MeshRenderer>();
-        // renderers.material = selectedMaterial;
+        //LeanTween.moveY(movingPiece, movingPiece.transform.localPosition.y + 0.25f, 0.25f).setLoopPingPong();
     }
 
     public void DeselectPiece(GameObject piece)
     {
-        // MeshRenderer renderers = piece.GetComponentInChildren<MeshRenderer>();
-        // renderers.material = defaultMaterial;
+        //LeanTween.pause(movingPiece);
+        //movingPiece.transform.localPosition = initialLocalPosition;
     }
 }
