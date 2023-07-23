@@ -339,7 +339,9 @@ GameObject:
   - component: {fileID: 1885578148}
   - component: {fileID: 1885578149}
   - component: {fileID: 1885578150}
-  m_Layer: 5
+  - component: {fileID: 1885578151}
+  - component: {fileID: 1885578152}
+  m_Layer: 3
   m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,3 +425,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7c0b531ec3e704b80175e5f61faed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1885578151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885578147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38fe46721c450e42b86907d57c29f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  add: 6
+  div: 1.5
+  cam: {fileID: 1769276926}
+  tileHighlightPrefab: {fileID: 7799499323570822191, guid: 97bfc272a546a074dafd12db00bc4a7e, type: 3}
+--- !u!61 &1885578152
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885578147}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.8, y: 12.8}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12.8, y: 12.8}
+  m_EdgeRadius: 0
