@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 1885578149}
   - component: {fileID: 1885578150}
   - component: {fileID: 1885578151}
+  - component: {fileID: 1885578153}
   - component: {fileID: 1885578152}
   m_Layer: 3
   m_Name: Board
@@ -437,8 +438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38fe46721c450e42b86907d57c29f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  add: 6
-  div: 1.5
   cam: {fileID: 1769276926}
   tileHighlightPrefab: {fileID: 7799499323570822191, guid: 97bfc272a546a074dafd12db00bc4a7e, type: 3}
 --- !u!61 &1885578152
@@ -467,3 +466,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.8, y: 12.8}
   m_EdgeRadius: 0
+--- !u!114 &1885578153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885578147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b916072656bfb3140af6c35a887ed3b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1769276926}
+  moveLocationPrefab: {fileID: 5882263323186862323, guid: 459e873c5572dfb43a934f2f62992ead, type: 3}
+  tileHighlightPrefab: {fileID: 7799499323570822191, guid: 97bfc272a546a074dafd12db00bc4a7e, type: 3}
+  attackLocationPrefab: {fileID: 6226493924358477874, guid: 0637f395a8f6d4c4fa2cdd8c0b541b42, type: 3}

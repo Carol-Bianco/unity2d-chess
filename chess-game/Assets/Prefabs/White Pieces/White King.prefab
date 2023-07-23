@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8840771004971481872}
   - component: {fileID: 8840771004971481875}
+  - component: {fileID: -8844267307328941596}
   m_Layer: 5
   m_Name: White King
   m_TagString: Untagged
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1281464459
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -4677252266075699275, guid: 76552be47e1344347951529b6ca38f67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8844267307328941596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8840771004971481873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a59fd93b19e9c469e680f618378638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0

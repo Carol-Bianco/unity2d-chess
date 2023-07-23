@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3326567659736912115}
   - component: {fileID: 3326567659736912114}
+  - component: {fileID: 5515019688945295789}
   m_Layer: 5
   m_Name: White Bishop
   m_TagString: Untagged
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1281464459
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2761316759485957198, guid: 76552be47e1344347951529b6ca38f67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5515019688945295789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326567659736912116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de03ed5c959a15e4ab69e389475a0d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2

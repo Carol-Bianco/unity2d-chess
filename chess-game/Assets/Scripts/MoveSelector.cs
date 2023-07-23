@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MoveSelector : MonoBehaviour
 {
+    public Camera cam;
+
     public GameObject moveLocationPrefab;
     public GameObject tileHighlightPrefab;
     public GameObject attackLocationPrefab;
@@ -12,6 +14,13 @@ public class MoveSelector : MonoBehaviour
     private GameObject movingPiece;
     private List<Vector2Int> moveLocations;
     private List<GameObject> locationHighlights;
+
+    TileSelector selector;
+
+    void Awake()
+    {
+        selector = GetComponent<TileSelector>();
+    }
 
     void Start ()
     {
@@ -23,10 +32,14 @@ public class MoveSelector : MonoBehaviour
 
     void Update ()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        
+        if(Input.GetMouseButtonDown(1))
+        {
+            CancelMove();
+        }
 
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (hit.collider != null)
         {
             Vector3 point = hit.point;
             Vector2Int gridPoint = Geometry.GridFromPoint(point);
@@ -35,7 +48,6 @@ public class MoveSelector : MonoBehaviour
             tileHighlight.transform.position = Geometry.PointFromGrid(gridPoint);
             if (Input.GetMouseButtonDown(0))
             {
-                // Reference Point 2: check for valid move location
                 if (!moveLocations.Contains(gridPoint))
                 {
                     return;
@@ -50,7 +62,7 @@ public class MoveSelector : MonoBehaviour
                     GameManager.instance.CapturePieceAt(gridPoint);
                     GameManager.instance.Move(movingPiece, gridPoint);
                 }
-                // Reference Point 3: capture enemy piece here later
+                
                 ExitState();
             }
         }
@@ -63,14 +75,13 @@ public class MoveSelector : MonoBehaviour
     private void CancelMove()
     {
         this.enabled = false;
-
+        tileHighlight.SetActive(false);
         foreach (GameObject highlight in locationHighlights)
         {
             Destroy(highlight);
         }
-
         GameManager.instance.DeselectPiece(movingPiece);
-        TileSelector selector = GetComponent<TileSelector>();
+        movingPiece = null;
         selector.EnterState();
     }
 
@@ -104,16 +115,7 @@ public class MoveSelector : MonoBehaviour
 
     private void ExitState()
     {
-        this.enabled = false;
-        TileSelector selector = GetComponent<TileSelector>();
-        tileHighlight.SetActive(false);
-        GameManager.instance.DeselectPiece(movingPiece);
-        movingPiece = null;
+        CancelMove();
         GameManager.instance.NextPlayer();
-        selector.EnterState();
-        foreach (GameObject highlight in locationHighlights)
-        {
-            Destroy(highlight);
-        }
     }
 }

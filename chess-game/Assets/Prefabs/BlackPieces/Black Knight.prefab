@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4523738655046137803}
   - component: {fileID: 4523738655046137802}
+  - component: {fileID: 1400554605789180010}
   m_Layer: 5
   m_Name: Black Knight
   m_TagString: Untagged
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1281464459
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 4075421274679430775, guid: ff21fd587146159409ff6f96f0012ab9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1400554605789180010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523738655046137800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43476bed0d88904ab0b117de1dff52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3

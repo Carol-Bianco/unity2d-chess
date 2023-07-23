@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7726826608722905914}
   - component: {fileID: 7726826608722905915}
+  - component: {fileID: 4519858307334173962}
   m_Layer: 5
   m_Name: Black King
   m_TagString: Untagged
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1281464459
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7898428942509270910, guid: ff21fd587146159409ff6f96f0012ab9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4519858307334173962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7726826608722905913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a59fd93b19e9c469e680f618378638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0

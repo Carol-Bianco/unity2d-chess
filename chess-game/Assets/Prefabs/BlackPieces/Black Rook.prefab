@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7108665904203987814}
   - component: {fileID: 7108665904203987815}
+  - component: {fileID: 6131929868092462847}
   m_Layer: 5
   m_Name: Black Rook
   m_TagString: Untagged
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1281464459
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -6449739385935256249, guid: ff21fd587146159409ff6f96f0012ab9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6131929868092462847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108665904203987813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda04a27c733ba54e9b8a6cfef64ee18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4

@@ -7,7 +7,14 @@ public class TileSelector : MonoBehaviour
     public Camera cam;
     public GameObject tileHighlightPrefab;
 
+    private MoveSelector move;
+
     private GameObject tileHighlight;
+
+    void Awake()
+    {
+        move = GetComponent<MoveSelector>();
+    }
 
     void Start ()
     {
@@ -15,6 +22,7 @@ public class TileSelector : MonoBehaviour
         Vector3 point = Geometry.PointFromGrid(gridPoint);
         tileHighlight = Instantiate(tileHighlightPrefab, point, Quaternion.identity, gameObject.transform);
         tileHighlight.SetActive(false);
+
     }
 
     void Update ()
@@ -37,7 +45,7 @@ public class TileSelector : MonoBehaviour
                 if (GameManager.instance.DoesPieceBelongToCurrentPlayer(selectedPiece))
                 {
                     GameManager.instance.SelectPiece(selectedPiece);
-                    // Reference Point 1: add ExitState call here later
+                    
                     ExitState(selectedPiece);
                 }
             }
@@ -57,7 +65,6 @@ public class TileSelector : MonoBehaviour
     {
         this.enabled = false;
         tileHighlight.SetActive(false);
-        MoveSelector move = GetComponent<MoveSelector>();
         move.EnterState(movingPiece);
     }
 }
